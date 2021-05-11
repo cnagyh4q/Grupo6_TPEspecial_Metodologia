@@ -7,6 +7,6 @@
 - Comentarios en commit:
     - Por cada commit realizar una breve explicación a que se hace referencia el cambio de código, para que sea más sencillo seguir los cambios en el repositorio
 - Revisado: 
-    - Cada tarea deberá ser estar revisada y aprobada por 1 integrante más del grupo antes de llevar los cambios a la rama principal
+    - Cada tarea deberá ser  revisada y aprobada por 1 integrante más del grupo antes de llevar los cambios a la rama principal
 - Criterios de aceptación:
     - Verificar que la tarea cumpla con los criterios de aceptación de la user story
