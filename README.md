@@ -10,3 +10,7 @@
     - Cada tarea deberá ser  revisada y aprobada por 1 integrante más del grupo antes de llevar los cambios a la rama principal
 - Criterios de aceptación:
     - Verificar que la tarea cumpla con los criterios de aceptación de la user story
+
+
+# Repositorio Github
+[Grupo 6](https://github.com/cnagyh4q/Grupo6_TPEspecial_Metodologia)
