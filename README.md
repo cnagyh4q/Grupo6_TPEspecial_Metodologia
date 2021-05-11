@@ -10,3 +10,11 @@
     - Cada tarea deberá ser  revisada y aprobada por 1 integrante más del grupo antes de llevar los cambios a la rama principal
 - Criterios de aceptación:
     - Verificar que la tarea cumpla con los criterios de aceptación de la user story
+
+
+# Proyecto Jira
+[Grupo 6](https://grupo6metodologia.atlassian.net/jira/software/projects/GTM/boards/1/backlog)
+
+
+# Informe Warm Up
+[Informe](https://docs.google.com/document/d/1ms0dDyjWwpZTzBJkt-hlvLh79O-BHUzBwgnxRHH65X0/edit?usp=sharing)
