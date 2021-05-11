@@ -12,5 +12,9 @@
     - Verificar que la tarea cumpla con los criterios de aceptación de la user story
 
 
-# Repositorio Github
-[Grupo 6](https://github.com/cnagyh4q/Grupo6_TPEspecial_Metodologia)
+# Proyecto Jira
+[Grupo 6](https://grupo6metodologia.atlassian.net/jira/software/projects/GTM/boards/1/backlog)
+
+
+# Informe Warm Up
+[Informe](https://docs.google.com/document/d/1ms0dDyjWwpZTzBJkt-hlvLh79O-BHUzBwgnxRHH65X0/edit?usp=sharing)
