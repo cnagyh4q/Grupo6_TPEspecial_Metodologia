@@ -17,4 +17,5 @@ class solicitudesModel{
         
         return $this->db->lastInsertId();
     }
+
 }
