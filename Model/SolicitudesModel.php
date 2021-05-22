@@ -9,7 +9,7 @@ class solicitudesModel{
     }
 
 
-    function agregarAutor($nombre, $direccion, $telefono, $franja_horaria, $volumen_materiales){//tengo que tereminar este
+    function agregarSolicitud($nombre, $direccion, $telefono, $franja_horaria, $volumen_materiales){//tengo que tereminar este
         
         $sentencia=$this->db->prepare('INSERT INTO solicitud_pedido (nombre_apellido, direccion, telefono, franja_horaria, volumen_materiales) VALUES (?,?,?,?,?)');
         $sentencia->execute([$nombre, $direccion, $telefono, $franja_horaria, $volumen_materiales]);
