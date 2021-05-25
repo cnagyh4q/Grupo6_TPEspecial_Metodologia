@@ -23,7 +23,7 @@ class SolicitudRetiroController
     }
 
 
-    function agregarComentarios()
+    function agregarSolicitud()
     {
         $body = $this->getData();
         if (

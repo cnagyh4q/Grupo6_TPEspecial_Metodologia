@@ -17,14 +17,14 @@
     <nav class="navbar navbar-inverse" style="background-color: #48a259;">
         <div class="container-fluid">
             <div class="navbar-header">
-                <img src="image/iconoReciclaje.jpg" width="80" height="70">
-                <a class="navbar-brand titulo" style="color: black; font-size:40;" href="#">
+                <img src="image/iconoReciclaje.png" width="80" height="70">
+                <a class="navbar-brand titulo" style="color: black; font-size:40;" href="home">
                     CRU TANDIL
                 </a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <a class="btn btn-primary btn-lg" href="index.html"
-                    style=" font-weight: bold;color:black ;background-color: #2ECC71;">Cerrar Sesion</a>
+                <a class="btn btn-primary btn-lg" href="solicitudRetiro"
+                    style=" font-weight: bold;color:black ;background-color: #2ECC71;">Solicitar Retiro</a>
             </ul>
         </div>
     </nav>
