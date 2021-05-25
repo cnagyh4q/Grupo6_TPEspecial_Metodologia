@@ -1,30 +1,27 @@
 {include file="header.tpl"}
 
-<div class="container-fluid">
-	<table class="table table-bordered table-hover">
-		<thead>
-            <tr>
-                <th>
-                    Material
-                </th>
-                <th>
-                    Tratamiento
-                </th>
-             </tr>
-        </thead>
-        <tbody>
-            {foreach from=$materiales item=material}
-            <tr>
-                 <div class="card w-75">
-                     <div class="card-body">
-                         <h5 class="card-title">{$material->tipo_material}{$material->tratamiento}</a></h5>
-                     </div>
-                 </div>
-            </tr>      
-          {/foreach}            
-        </tbody>
-    </table>
+<div class="container">
+    <div class="container-fluid">
+	    <table id="tmateriales"class="table table-bordered text-center" style="margin-top:5%;background-color: rgba(255, 255, 255, 0.897)">
+            <thead>
+                <tr>
+                    <td colspan="2" ><h2><strong>Listado de Materiales</strong></h2></td>
+                </tr>
+                <tr>
+                    <th><h5><strong>Material</strong></h5></th>
+                    <th><h5><strong>Tratamiento</strong></h5></th>
+                </tr>
+            </thead>
+            <tbody>
+                {foreach from=$materiales item=material}
+                    <tr>
+                        <td>{$material.tipo_material}</td>
+                        <td>{$material.tratamiento}</td>
+                    </tr>  
+                {/foreach}            
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
 {include file="footer.tpl"}
