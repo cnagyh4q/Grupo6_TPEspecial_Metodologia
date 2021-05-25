@@ -6,3 +6,16 @@
     font-size: 30px;
     font-weight: bold;
 }
+
+body{
+    background-image: url("../image/modelo-inconsútil-vertical-de-los-símbolos-de-la-ecología-38448065.jpg");
+}
+
+#tmateriales{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: rgba(95, 170, 72, 0.966) 5px solid;
+}
+
+#fsolicitud{
+    border: rgba(95, 170, 72, 0.966) 5px solid;
+}

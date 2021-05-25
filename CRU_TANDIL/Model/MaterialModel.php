@@ -18,4 +18,12 @@ class MaterialModel{
         return $this->db->lastInsertId();
     }
 
+    function getMateriales(){
+        $sentencia = $this->db->prepare("SELECT * FROM material ORDER BY nmaterial ASC");
+        $sentencia->execute();
+        $materiales = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+        return $materiales;
+    }
+
 }
