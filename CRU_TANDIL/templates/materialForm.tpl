@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="well well-sm">
-                        <form class="form-horizontal" method="post">
+                        <form class="form-horizontal" id="form-solicitud" method="post">
                             <fieldset>
                                 <hr>
                                 <legend class="text-center header "><b>Nuevo Material</b></legend>
@@ -38,7 +38,7 @@
                 <a class="btn btn-primary btn-lg" href="index.html" style=" font-weight: bold;color:black ;background-color: #2ECC71;">Volver</a>
             </div>
             <div class="col-md-4">
-                <button type="submit" class="btn btn-primary btn-lg" style=" font-weight: bold;color:black ;background-color: #2ECC71;">Continuar</button>
+                <button type="submit" id="btn-continuar" form="form-solicitud" class="btn btn-primary btn-lg" style=" font-weight: bold;color:black ;background-color: #2ECC71;">Continuar</button>
             </div>
         </div>
     </div>
