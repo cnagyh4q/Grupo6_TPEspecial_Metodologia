@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2021 a las 18:03:16
+-- Tiempo de generación: 25-05-2021 a las 17:17:32
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -25,6 +25,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `material`
+--
+
+CREATE TABLE `material` (
+  `nmaterial` bigint(20) UNSIGNED NOT NULL,
+  `tipo_material` varchar(50) NOT NULL,
+  `tratamiento` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `solicitud_pedido`
 --
 
@@ -42,6 +54,13 @@ CREATE TABLE `solicitud_pedido` (
 --
 
 --
+-- Indices de la tabla `material`
+--
+ALTER TABLE `material`
+  ADD PRIMARY KEY (`nmaterial`),
+  ADD UNIQUE KEY `nmaterial` (`nmaterial`);
+
+--
 -- Indices de la tabla `solicitud_pedido`
 --
 ALTER TABLE `solicitud_pedido`
@@ -51,6 +70,12 @@ ALTER TABLE `solicitud_pedido`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `material`
+--
+ALTER TABLE `material`
+  MODIFY `nmaterial` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud_pedido`
