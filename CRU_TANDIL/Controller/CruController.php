@@ -3,6 +3,7 @@
     require_once "./View/homeView.php";
     require_once "./View/solicitudRetiroView.php";
     require_once "./View/materialView.php";
+    require_once "./Model/MaterialModel.php";
    
     class CruContoller{
 
@@ -14,19 +15,24 @@
             $this->homeView = new HomeView();
             $this->solicitudRetiroView = new SolicitudRetiroView();
             $this->materialView = new MaterialView();
-           
+            $this->materialModel = new MaterialModel();           
            
         }
 
     
 
         function home(){
-           $this->homeView->showHome();
+            $materiales = $this->materialModel->getMateriales();
+            $this->homeView->showHome($materiales);
+        }
+
+        function homeAdmin(){
+            $materiales = $this->materialModel();
+            $this->homeView->showHomeAdmin($materiales);
         }
 
 
         function solicitudRetiro(){
-       
             $this->solicitudRetiroView->showSolicitudRetiro();
 
         }

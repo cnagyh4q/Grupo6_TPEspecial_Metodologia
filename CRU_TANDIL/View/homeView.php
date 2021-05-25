@@ -13,9 +13,15 @@ class HomeView{
        $this->smarty->assign('url',BASE_URL);
    }
 
-   function showHome(){
+   function showHome($materiales){
+      $this->smarty->assign('materiales',$materiales);
       $this->smarty->display('templates/home.tpl');
 
+   }
+
+   function showHomeAdmin($materiales){
+      $this->smarty->assign('materiales',$materiales);
+      $this->smarty->display('templates/homeAdmin.tpl');
    }
 
 }
