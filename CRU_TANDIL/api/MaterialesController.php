@@ -45,12 +45,26 @@ class MaterialesController
     }
 
 
-   
     function eliminarMaterial($params = null)
     {
         if (isset($params[':ID']) && !empty($params[':ID'])) {           
                 $this->model->eliminarMaterial($params[':ID']);
                 return $this->view->response($params[':ID'], 200);           
+        }
+        return $this->view->response("error datos obligatorios", 404);
+    }
+
+
+    function editarMaterial($params = null)
+    {
+        $body = $this->getData();
+        
+        if (isset($params[':ID']) && !empty($params[':ID'])) {  
+            if (isset($body->material) && !empty($body->material) && isset($body->tratamiento) 
+                && !empty($body->tratamiento)){
+                    $this->model->editarMaterial($params[':ID'], $body->material, $body->tratamiento);
+                    return $this->view->response($params[':ID'], 200);           
+            }       
         }
         return $this->view->response("error datos obligatorios", 404);
     }

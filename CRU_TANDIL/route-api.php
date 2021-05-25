@@ -24,5 +24,8 @@ $r->addRoute("material", "POST", "MaterialesController", "agregarMaterial");
 //Elimina un material por id 
 $r->addRoute("material/:ID", "DELETE", "MaterialesController", "eliminarMaterial");
 
+//Actualiza la informacion de un material dado un id
+$r->addRoute("material/:ID", "PUT", "MaterialesController", "editarMaterial");
+
 
 $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);
