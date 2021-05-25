@@ -18,4 +18,15 @@ class MaterialModel{
         return $this->db->lastInsertId();
     }
 
+
+
+    /*Parametros: id 
+    Elimina el metrial dependiendo el ID del mismo*/
+    function eliminarMaterial($idmaterial){
+        
+        $sentencia=$this->db->prepare('DELETE FROM material where idmaterial = ?');
+        $sentencia->execute([$idmaterial]);
+        
+    }
+
 }

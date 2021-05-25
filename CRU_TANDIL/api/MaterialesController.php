@@ -31,7 +31,7 @@ class MaterialesController
             )
          {
 
-            echo "entro";
+           
             $solicitud = $this->model->agregarMaterial($body->material, $body->tratamiento);
             if ($solicitud > 0) {
                 return $this->view->response("ok", 200);
@@ -42,5 +42,16 @@ class MaterialesController
 
 
         return $this->view->response("error parametros obliagtorios", 404);
+    }
+
+
+   
+    function eliminarMaterial($params = null)
+    {
+        if (isset($params[':ID']) && !empty($params[':ID'])) {           
+                $this->model->eliminarMaterial($params[':ID']);
+                return $this->view->response($params[':ID'], 200);           
+        }
+        return $this->view->response("error datos obligatorios", 404);
     }
 }
