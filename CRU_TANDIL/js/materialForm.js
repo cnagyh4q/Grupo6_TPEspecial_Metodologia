@@ -1,10 +1,10 @@
-document.querySelector('#form-solicitud').addEventListener('submit', (e) => {
+document.querySelector('#form-material').addEventListener('submit', (e) => {
 
     e.preventDefault();
 
     let data = new FormData(e.target);
 
-    fetch('', {
+    fetch('./api/material', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(data)),
     })
@@ -19,7 +19,7 @@ function respuesta(response) {
 
     if (response.ok) {
         alert("El material se guardo correctamente");
-        window.location.assign("home");
+        //window.location.assign("home");
     }
     else {
         alert("Ha surgido un error guardando los datos del nuevo material, por favor intente nuevamente")
