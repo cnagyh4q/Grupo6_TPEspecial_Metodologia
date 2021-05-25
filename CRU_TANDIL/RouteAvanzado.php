@@ -1,5 +1,7 @@
 <?php
     require_once 'RouterClass.php';
+    require_once 'Controller/CruController.php';
+   
    
     
     // CONSTANTES PARA RUTEO
@@ -7,5 +9,13 @@
 
     $r = new Router();
 
+
+    $r->addRoute("home", "GET", "CruContoller", "home");
+
+    $r->addRoute("solicitudRetiro", "GET", "CruContoller", "solicitudRetiro");
+
+
+
+    $r->setDefaultRoute("CruContoller", "home");
 
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
