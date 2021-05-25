@@ -13,7 +13,7 @@
     $r->addRoute("home", "GET", "CruContoller", "home");
 
     $r->addRoute("solicitudRetiro", "GET", "CruContoller", "solicitudRetiro");
-
+    $r->addRoute("nuevoMaterial", "GET", "CruContoller", "nuevoMaterial");
 
 
     $r->setDefaultRoute("CruContoller", "home");

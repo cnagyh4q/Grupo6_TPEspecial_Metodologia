@@ -2,6 +2,7 @@
 
     require_once "./View/homeView.php";
     require_once "./View/solicitudRetiroView.php";
+    require_once "./View/materialView.php";
    
     class CruContoller{
 
@@ -12,7 +13,7 @@
            
             $this->homeView = new HomeView();
             $this->solicitudRetiroView = new SolicitudRetiroView();
-           
+            $this->materialView = new MaterialView();
            
            
         }
@@ -28,10 +29,10 @@
        
             $this->solicitudRetiroView->showSolicitudRetiro();
 
-              
-                
-       
-            
+        }
+
+        function nuevoMaterial(){
+            $this->materialView->showMaterialForm();
         }
 
     }
