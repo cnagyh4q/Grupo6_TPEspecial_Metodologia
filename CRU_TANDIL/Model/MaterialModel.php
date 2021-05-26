@@ -19,12 +19,10 @@ class MaterialModel{
     }
 
     /*Parametros: id 
-    Elimina el metrial dependiendo el ID del mismo*/
+    Elimina el material dependiendo el ID del mismo*/
     function eliminarMaterial($idmaterial){
-        
-        $sentencia=$this->db->prepare('DELETE FROM material where nmaterial = ?');
+        $sentencia=$this->db->prepare("DELETE FROM material where nmaterial = ?");
         $sentencia->execute([$idmaterial]);
-        
     }
 
     /*Parametros: nmaterial (id), material, tratamiento
@@ -32,6 +30,14 @@ class MaterialModel{
     function editarMaterial($id, $material, $tratamiento){
         $sentencia = $this->db->prepare("UPDATE material SET tipo_material = ?, tratamiento = ? WHERE nmaterial = ?");
         $sentencia->execute(array($material, $tratamiento, $id));
+    }
+
+    function getMateriales(){
+        $sentencia = $this->db->prepare("SELECT * FROM material ORDER BY nmaterial ASC");
+        $sentencia->execute();
+        $materiales = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+        return $materiales;
     }
 
 }

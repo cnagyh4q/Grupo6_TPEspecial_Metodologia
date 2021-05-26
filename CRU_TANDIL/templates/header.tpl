@@ -23,8 +23,8 @@
                 </a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <a class="btn btn-primary btn-lg" href="solicitudRetiro"
-                    style=" font-weight: bold;color:black ;background-color: #2ECC71;">Solicitar Retiro</a>
+                <a class="btn btn btn-lg" href="solicitudRetiro"
+                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Solicitar Retiro</a>
             </ul>
         </div>
     </nav>
