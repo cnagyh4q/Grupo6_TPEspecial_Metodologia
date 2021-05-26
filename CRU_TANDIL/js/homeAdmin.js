@@ -11,6 +11,7 @@ function eliminarMaterial(id) {
         .catch((error) => console.log(error));
 
 }
+
 function respuesta(response) {
     console.log(response)
 
@@ -42,33 +43,36 @@ function funcionPrueba(e) {
 
 }
 
-/* document.getElementById("btn_editar").addEventListener('click', functSubmit);
-
-function functSubmit(event) {
-    let nmaterialModal = document.querySelector("#nmaterialModal").value;
-    let tipoModal = document.querySelector("#materialModal").value;
-    let tratamientoModal = document.querySelector("#tratamientoModal").value;
-    //console.log(form);
-    var msg = document.getElementById("tratamientoModal").value;
-    alert("Cmabiando " + nmaterialModal + ", " + tipoModal + ", " + tratamientoModal);
-} */
-
 document.querySelector("#form-material").addEventListener('submit', (e) => {
-    console.log("editar modal");
 
+    let nmaterial = e.target.querySelector("#nmaterialModal").value;
     e.preventDefault();
 
-    //let data = new FormData(e.target);
+    let data = new FormData(e.target);
 
-    fetch('./api/material', {
-        method: 'POST',
+    console.log(JSON.stringify(Object.fromEntries(data)), nmaterial);
+
+    fetch('./api/material/' + nmaterial, {
+        method: 'PUT',
         body: JSON.stringify(Object.fromEntries(data)),
     })
-        .then((response) => respuesta(response))
+        .then((response) => respuestaEdit(response))
         .then((json) => json)
         .catch((error) => console.log(error));
 
 });
+
+function respuestaEdit(response) {
+    console.log(response)
+
+    if (response.ok) {
+        alert("Se actualizo el material correctamente");
+        window.location.assign("homeAdmin");
+    }
+    else {
+        alert("Ha surgido un error al actualizar el material, por favor intente nuevamente");
+    }
+}
 
 
 
