@@ -27,7 +27,7 @@
 <div>
     <div class="container sform">
         <div class="row">
-            <div class="col-md-12" id="fsolicitud"style="margin-top:5%; background-color: rgba(255, 255, 255, 0.897)">
+            <div class="col-md-12" id="form"style="margin-top:5%; background-color: rgba(255, 255, 255, 0.897)">
                 <div class="well well-sm">
                     <form class="form-horizontal" id="form-solicitud" method="post">
                         <hr>
