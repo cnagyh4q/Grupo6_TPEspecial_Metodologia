@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-5">
-                <a class="btn btn-primary btn-lg" href="./homeAdmin.tpl" style=" font-weight: bold;color:black ;background-color: #2ECC71;">Volver</a>
+                <a class="btn btn-primary btn-lg" href="homeAdmin" style=" font-weight: bold;color:black ;background-color: #2ECC71;">Volver</a>
             </div>
             <div class="col-md-4">
                 <button type="submit" id="btn-continuar" form="form-material" class="btn btn-primary btn-lg" style=" font-weight: bold;color:black ;background-color: #2ECC71;">Continuar</button>
