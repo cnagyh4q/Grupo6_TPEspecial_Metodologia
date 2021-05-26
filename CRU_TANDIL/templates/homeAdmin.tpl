@@ -1,12 +1,14 @@
-{include file="header.tpl"}
+{include file="headerAdmin.tpl"}
+
+<div class="ttitulo">
+    <h2><strong>Listado de Materiales</strong></h2>
+</div>
 
 <div class="container">
     <div class="container-fluid">
 	    <table id="tmateriales"class="table table-bordered text-center" style="margin-top:5%;background-color: rgba(255, 255, 255, 0.897)">
             <thead>
-                <tr>
-                    <td colspan="2" ><h2><strong>Listado de Materiales</strong></h2></td>
-                </tr>
+                
                 <tr>
                     <th><h5><strong>Material</strong></h5></th>
                     <th><h5><strong>Tratamiento</strong></h5></th>
@@ -16,16 +18,26 @@
                 {foreach from=$materiales  key=k item=material}
                     <tr>
                         <td>{$material.tipo_material}</td>
-                        <td>{$material.tratamiento}</td>
-                        <td><button onclick="eliminarMaterial({$material.nmaterial})" type="button" class="btn btn-secondary">
-                                    Borrar</button></td>
-                        <td><button type="button" class="btn btn-secondary btonModal" data-toggle="modal" data-target="#myModal" 
+                        <td>
+                        {$material.tratamiento}
+                        <div style="float:right;"><button onclick="eliminarMaterial({$material.nmaterial})" type="button" class="btn btn-secondary">
+                                    Borrar</button>
+                        <button type="button" class="btn btn-secondary btonModal" data-toggle="modal" data-target="#myModal" 
                                 data-nmaterial="{$material.nmaterial}" data-tipo_material="{$material.tipo_material}" data-tratamiento="{$material.tratamiento}">
-                                   Editar</button></td>                        
+                                   Editar</button></div>
+                        </td>                     
                     </tr> 
                 {/foreach}            
             </tbody>
         </table>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-5">
+                    <a class="btn btn btn-lg" href="nuevoMaterial"
+                        style=" font-weight: bold;color:black ;background-color:rgba(173, 250, 150, 0.925);">Nuevo Material</a>
+                </div>
+            </div>
+        </div>
     <div class="modal" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
