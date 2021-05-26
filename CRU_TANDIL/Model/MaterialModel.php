@@ -18,6 +18,20 @@ class MaterialModel{
         return $this->db->lastInsertId();
     }
 
+    /*Parametros: id 
+    Elimina el material dependiendo el ID del mismo*/
+    function eliminarMaterial($idmaterial){
+        $sentencia=$this->db->prepare("DELETE FROM material where nmaterial = ?");
+        $sentencia->execute([$idmaterial]);
+    }
+
+    /*Parametros: nmaterial (id), material, tratamiento
+    Dado el numero de id de un material, actualiza los datos del mismo */
+    function editarMaterial($id, $material, $tratamiento){
+        $sentencia = $this->db->prepare("UPDATE material SET tipo_material = ?, tratamiento = ? WHERE nmaterial = ?");
+        $sentencia->execute(array($material, $tratamiento, $id));
+    }
+
     function getMateriales(){
         $sentencia = $this->db->prepare("SELECT * FROM material ORDER BY nmaterial ASC");
         $sentencia->execute();

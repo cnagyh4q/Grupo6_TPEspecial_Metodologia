@@ -25,12 +25,9 @@
                     CRU TANDIL
                 </a>
             </div>
-            <ul class="nav navbar-nav navbar-right btnheader" >
-                <li class="nav-item"><a class="btn btn btn-lg" href="solicitudRetiro"
-                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Solicitar Retiro</a></li>
-                <li class="nav-item"><a class="btn btn btn-lg" href="homeAdmin"
-                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Ingresar</a></li>
+            <ul class="nav navbar-nav navbar-right">
+                <a class="btn btn btn-lg" href="home"
+                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Cerrar Sesión</a>
             </ul>
-            
         </div>
     </nav>

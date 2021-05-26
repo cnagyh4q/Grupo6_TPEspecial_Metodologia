@@ -27,7 +27,7 @@
         }
 
         function homeAdmin(){
-            $materiales = $this->materialModel();
+            $materiales = $this->materialModel->getMateriales();
             $this->homeView->showHomeAdmin($materiales);
         }
 

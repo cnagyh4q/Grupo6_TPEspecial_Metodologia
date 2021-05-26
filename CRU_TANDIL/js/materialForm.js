@@ -19,7 +19,7 @@ function respuesta(response) {
 
     if (response.ok) {
         alert("El material se guardo correctamente");
-        //window.location.assign("home");
+        window.location.assign("homeAdmin");
     }
     else {
         alert("Ha surgido un error guardando los datos del nuevo material, por favor intente nuevamente")

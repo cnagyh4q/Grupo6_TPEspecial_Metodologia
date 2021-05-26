@@ -3,7 +3,7 @@
     <div>
         <div class="container sform">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" id="form"style="margin-top:5%; background-color: rgba(255, 255, 255, 0.897)">
                     <div class="well well-sm">
                         <form class="form-horizontal" id="form-material" method="post">
                             <fieldset>
@@ -35,10 +35,10 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-5">
-                <a class="btn btn-primary btn-lg" href="index.html" style=" font-weight: bold;color:black ;background-color: #2ECC71;">Volver</a>
+                <a class="btn btn btn-lg" href="homeAdmin" style=" font-weight: bold;color:black ;background-color:rgba(173, 250, 150, 0.925);">Volver</a>
             </div>
             <div class="col-md-4">
-                <button type="submit" id="btn-continuar" form="form-material" class="btn btn-primary btn-lg" style=" font-weight: bold;color:black ;background-color: #2ECC71;">Continuar</button>
+                <button type="submit" id="btn-continuar" form="form-material" class="btn btn btn-lg" style=" font-weight: bold;color:black ;background-color:rgba(173, 250, 150, 0.925);">Continuar</button>
             </div>
         </div>
     </div>
