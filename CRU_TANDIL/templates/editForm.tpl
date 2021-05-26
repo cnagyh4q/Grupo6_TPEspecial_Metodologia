@@ -15,9 +15,9 @@
                                     <input id="nameLastname" name="material" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value={$material.tipo_material}>
                                 </div>
 
-                                <div class="input-group mb-3">
+                               div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Tratamiento</span>
-                                    <textarea id="direccion" name="tratamiento" class="form-control" rows="3"></textarea>
+                                    <textarea id="direccion" name="tratamiento" class="form-control" rows="3">{$material.tratamiento}</textarea>
                                 </div>
                             </fieldset>
                         </form>
