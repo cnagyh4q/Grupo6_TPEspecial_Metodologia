@@ -1,0 +1,65 @@
+<?php
+/* Smarty version 3.1.36, created on 2021-05-27 05:08:46
+  from 'C:\xampp\htdocs\facultad\metodologia\Grupo6_TPEspecial_Metodologia\CRU_TANDIL\templates\home.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.36',
+  'unifunc' => 'content_60af0d3e83a6d9_84496299',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'ce58ed3f1181511b2bca817ffeb63676d0ae0f41' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\facultad\\metodologia\\Grupo6_TPEspecial_Metodologia\\CRU_TANDIL\\templates\\home.tpl',
+      1 => 1622067849,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_60af0d3e83a6d9_84496299 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<div class="ttitulo">
+    <h2><strong>Listado de Materiales</strong></h2>
+</div>
+
+<div class="container">
+    <div class="container-fluid">
+	    <table id="tmateriales"class="table table-bordered text-center" style="margin-top:5%;background-color: rgba(255, 255, 255, 0.897)">
+            <thead>
+                <tr>
+                    <th><h5><strong>Material</strong></h5></th>
+                    <th><h5><strong>Tratamiento</strong></h5></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['materiales']->value, 'material');
+$_smarty_tpl->tpl_vars['material']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['material']->value) {
+$_smarty_tpl->tpl_vars['material']->do_else = false;
+?>
+                    <tr>
+                        <td><?php echo $_smarty_tpl->tpl_vars['material']->value['tipo_material'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['material']->value['tratamiento'];?>
+</td>
+                    </tr>  
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}
