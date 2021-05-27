@@ -19,5 +19,5 @@
 # Informe Warm Up
 [Informe](https://docs.google.com/document/d/1ms0dDyjWwpZTzBJkt-hlvLh79O-BHUzBwgnxRHH65X0/edit?usp=sharing)
 
-# Documento con las pruebas de los integrantes por cada tarea
+# Pruebas por cada tarea
 [Pruebas](https://docs.google.com/document/d/1bOThi9uieSaqsA53ggnJnSIagUIA3sdOGNP4HLsXEhU/edit#heading=h.as4wnbklyww4)
