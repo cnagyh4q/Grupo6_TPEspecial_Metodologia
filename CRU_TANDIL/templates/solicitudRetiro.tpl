@@ -34,20 +34,20 @@
                         <legend class="text-center header "><b>Solicitud de Retiro</b></legend>
                         <hr>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Nombre-Apellido </span>
+                            <span class="input-group-text" id="inputGroup-sizing-default">Nombre - Apellido </span>
                             <input id="nameLastname" name="nombre" type="text" class="form-control"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         </div>
 
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Direccion</span>
+                            <span class="input-group-text" id="inputGroup-sizing-default">Dirección</span>
                             <input id="direccion" name="direccion" type="text" class="form-control"
                                 form="form-solicitud" aria-label="Sizing example input"
                                 aria-describedby="inputGroup-sizing-default">
                         </div>
 
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
+                            <span class="input-group-text" id="inputGroup-sizing-default">Teléfono</span>
                             <input id="telefono" name="telefono" type="number" class="form-control"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         </div>
