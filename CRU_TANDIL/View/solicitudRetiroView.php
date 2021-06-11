@@ -17,7 +17,10 @@ class SolicitudRetiroView{
       $this->smarty->display('templates/solicitudRetiro.tpl');
 
    }
-
+   function showListadoSolicitudes($solicitudes){
+      $this->smarty->assign('solicitudes',$solicitudes);
+      $this->smarty->display('templates/listadoSolicitudes.tpl');
+   }
 }
 
 
