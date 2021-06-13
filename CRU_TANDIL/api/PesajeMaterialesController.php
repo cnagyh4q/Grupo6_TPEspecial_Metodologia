@@ -30,7 +30,7 @@ class PesajeMaterialesController
      * material
      * rol
      */
-    function registrarMaterial()
+    function registrarMaterialPesaje()
     {
         $body = $this->getData();
         if (
