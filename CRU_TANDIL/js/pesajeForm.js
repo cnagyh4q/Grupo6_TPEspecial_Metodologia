@@ -19,7 +19,7 @@ function respuesta(response) {
 
     if (response.ok) {
         alert("Los datos del pesaje han sido cargados con exito");
-        window.location.assign("weighingForm");
+        window.location.assign("home");
     }
     else {
         alert("Ha surgido un error guardando los datos del pesaje, por favor intente nuevamente");

@@ -94,4 +94,5 @@
     </div>
 </div>
 <script src="js/solicitudRetiro.js">
-    {include file="footer.tpl"}
+
+{include file="footer.tpl"}

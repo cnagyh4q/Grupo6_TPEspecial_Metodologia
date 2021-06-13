@@ -14,7 +14,7 @@ class RegistroPesajeView{
    }
 
    function showRegistroPesaje(){
-     // $this->smarty->display('templates/materialForm.tpl');
+     $this->smarty->display('templates/pesajeForm.tpl');
 
    }
 
