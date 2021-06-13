@@ -26,8 +26,10 @@
                 </a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <a class="btn btn btn-lg" href="home"
-                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Cerrar Sesión</a>
+                 <li class="nav-item"><a class="btn btn btn-lg" href="listadoSolicitudes"
+                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Listado Solicitudes</a></li>
+                  <li class="nav-item"><a class="btn btn btn-lg" href="home"
+                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Cerrar Sesión</a></li>
             </ul>
         </div>
     </nav>
