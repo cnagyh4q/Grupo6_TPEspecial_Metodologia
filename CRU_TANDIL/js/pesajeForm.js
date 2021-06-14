@@ -4,7 +4,7 @@ document.querySelector('#form-pesaje').addEventListener('submit', (e) => {
 
     let data = new FormData(e.target);
 
-    fetch('./api/pesaje', {
+    fetch('./api/pesajeMaterial', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(data)),
     })

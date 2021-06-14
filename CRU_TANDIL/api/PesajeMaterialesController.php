@@ -34,9 +34,10 @@ class PesajeMaterialesController
     function registrarMaterialPesaje()
     {
         $body = $this->getData();
+        var_dump($body);
         if (
             isset($body->id) && !empty($body->id) && isset($body->peso) && !empty($body->peso)
-            && isset($body->meterial) && !empty($body->meterial) && isset($body->rol) && !empty($body->rol)
+            && isset($body->material) && !empty($body->material) && isset($body->rol) && !empty($body->rol)
             )
          {           
             $registro = $this->model->agregarPesaje($body->id,$body->peso ,$body->meterial,$body->rol);
