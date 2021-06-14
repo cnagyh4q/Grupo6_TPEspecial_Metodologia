@@ -28,6 +28,8 @@
             <ul class="nav navbar-nav navbar-right btnheader" >
                 <li class="nav-item"><a class="btn btn btn-lg" href="solicitudRetiro"
                     style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Solicitar Retiro</a></li>
+                <li class="nav-item"><a class="btn btn btn-lg" href="pesajeMaterial"
+                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Registro Material</a></li>
                 <li class="nav-item"><a class="btn btn btn-lg" href="homeAdmin"
                     style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Ingresar</a></li>
             </ul>

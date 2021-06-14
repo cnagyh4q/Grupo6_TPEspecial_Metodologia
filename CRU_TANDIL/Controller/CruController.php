@@ -3,6 +3,7 @@
     require_once "./View/homeView.php";
     require_once "./View/solicitudRetiroView.php";
     require_once "./View/materialView.php";
+    require_once "./View/registroPesajeView.php";
     require_once "./Model/MaterialModel.php";
     require_once "./Model/SolicitudesModel.php";
    
@@ -17,7 +18,8 @@
             $this->solicitudRetiroView = new SolicitudRetiroView();
             $this->solicitudesModel = new solicitudesModel();
             $this->materialView = new MaterialView();
-            $this->materialModel = new MaterialModel();           
+            $this->materialModel = new MaterialModel();  
+            $this->registroPesajeView = new RegistroPesajeView();         
            
         }
 
@@ -46,6 +48,11 @@
         function listadoSolicitudes(){
             $solicitudes = $this->solicitudesModel->getSolicitudes();
             $this->solicitudRetiroView->showListadoSolicitudes($solicitudes);
+
+        }
+        
+        function registroPesaje(){
+            $this->registroPesajeView->showRegistroPesaje();
         }
 
     }
