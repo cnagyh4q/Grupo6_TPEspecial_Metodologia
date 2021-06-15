@@ -10,6 +10,15 @@
                                 <legend class="text-center header "><b>Registro de Material</b></legend>
                                 <hr>
                                 <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Rol</span>
+                                    <select onchange="ocultarId(this)" name="rol" id="rol" class="form-select col-md-1 col-md-offset-2 text-center" aria-label="Default select example">
+                                        <option selected>Elija una opción</option>
+                                        <option value="1">Cartonero</option>
+                                        <option value="2">Vecino Buena Onda</option>
+                                </select>
+                                </div>
+                                
+                                <div id="idUsuario" class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Usuario</span>
                                     <input id="id" name="id" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                                 </div>
@@ -22,10 +31,6 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Material</span>
                                     <input id="material" name="material" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Rol</span>
-                                    <input id="rol" name="rol" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                                 </div>
                                 
                             </fieldset>

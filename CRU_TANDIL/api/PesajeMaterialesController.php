@@ -36,7 +36,7 @@ class PesajeMaterialesController
         $body = $this->getData();
         var_dump($body);
         if (
-            isset($body->id) && !empty($body->id) && isset($body->peso) && !empty($body->peso)
+            isset($body->id) && isset($body->peso) && !empty($body->peso)
             && isset($body->material) && !empty($body->material) && isset($body->rol) && !empty($body->rol)
             )
          {           

@@ -4,13 +4,13 @@ document.querySelector('#form-pesaje').addEventListener('submit', (e) => {
 
     let data = new FormData(e.target);
 
-    fetch('./api/pesajeMaterial', {
+    fetch('./api/pesaje', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(data)),
     })
         .then((response) => respuesta(response))
         .then((json) => json)
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error));       
 
 });
 
@@ -23,5 +23,15 @@ function respuesta(response) {
     }
     else {
         alert("Ha surgido un error guardando los datos del pesaje, por favor intente nuevamente");
+    }
+}
+
+function ocultarId(rol){
+    let id=document.querySelector("#idUsuario");
+    if(rol.value==2){
+        id.style.display="none";
+    }
+    else{
+         id.style.display="flex";
     }
 }
