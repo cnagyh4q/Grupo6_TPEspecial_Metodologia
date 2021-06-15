@@ -34,13 +34,18 @@ class PesajeMaterialesController
     function registrarMaterialPesaje()
     {
         $body = $this->getData();
-        var_dump($body);
+        
         if (
             isset($body->id) && isset($body->peso) && !empty($body->peso)
             && isset($body->material) && !empty($body->material) && isset($body->rol) && !empty($body->rol)
             )
-         {           
-            $registro = $this->model->agregarPesaje($body->id,$body->peso ,$body->meterial,$body->rol);
+         {   
+            $body->rol = $body->rol == 1 ? "Cartonero": "Vecino buena onda"; 
+
+            $body->id = empty($body->id) ? null : $body->id;
+                        
+            $registro = $this->model->agregarPesaje($body->id,$body->peso ,$body->material,$body->rol);
+
             if ($registro > 0) {
                 return $this->view->response("ok", 200);
             } else {
@@ -49,7 +54,7 @@ class PesajeMaterialesController
         }
 
 
-        return $this->view->response("error parametros obliagtorios", 404);
+        return $this->view->response("error parametros obliagtorios", 500);
     }
 
 }

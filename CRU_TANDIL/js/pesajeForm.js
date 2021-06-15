@@ -4,13 +4,13 @@ document.querySelector('#form-pesaje').addEventListener('submit', (e) => {
 
     let data = new FormData(e.target);
 
-    fetch('./api/pesaje', {
+    fetch('./api/pesajeMaterial', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(data)),
     })
         .then((response) => respuesta(response))
         .then((json) => json)
-        .catch((error) => console.log(error));       
+        .catch((error) => console.log(error));
 
 });
 
@@ -26,12 +26,12 @@ function respuesta(response) {
     }
 }
 
-function ocultarId(rol){
-    let id=document.querySelector("#idUsuario");
-    if(rol.value==2){
-        id.style.display="none";
+function ocultarId(rol) {
+    let id = document.querySelector("#idUsuario");
+    if (rol.value == 2) {
+        id.style.display = "none";
     }
-    else{
-         id.style.display="flex";
+    else {
+        id.style.display = "flex";
     }
 }
