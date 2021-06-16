@@ -18,4 +18,13 @@ class solicitudesModel{
         return $this->db->lastInsertId();
     }
 
+    /*Trae todas las solicitudes que hay guardados en la base de datos */
+    function getSolicitudes(){
+        $sentencia = $this->db->prepare("SELECT * FROM solicitud_pedido");
+        $sentencia->execute();
+        $solicitudes = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+        return $solicitudes;
+    }
+
 }

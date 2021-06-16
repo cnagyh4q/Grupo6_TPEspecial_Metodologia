@@ -16,6 +16,7 @@
     $r->addRoute("solicitudRetiro", "GET", "CruContoller", "solicitudRetiro");
     $r->addRoute("nuevoMaterial", "GET", "CruContoller", "nuevoMaterial");
 
+    $r->addRoute("listadoSolicitudes", "GET", "CruContoller", "listadoSolicitudes");
     $r->addRoute("pesajeMaterial", "GET", "CruContoller", "registroPesaje");
 
 

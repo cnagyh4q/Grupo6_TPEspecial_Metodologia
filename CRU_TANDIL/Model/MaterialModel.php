@@ -32,6 +32,7 @@ class MaterialModel{
         $sentencia->execute(array($material, $tratamiento, $id));
     }
 
+    /*Trae todos los Materiales que hay guardados en la base de datos */
     function getMateriales(){
         $sentencia = $this->db->prepare("SELECT * FROM material ORDER BY nmaterial ASC");
         $sentencia->execute();

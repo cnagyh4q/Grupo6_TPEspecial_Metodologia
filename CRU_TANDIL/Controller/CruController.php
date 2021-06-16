@@ -5,6 +5,7 @@
     require_once "./View/materialView.php";
     require_once "./View/registroPesajeView.php";
     require_once "./Model/MaterialModel.php";
+    require_once "./Model/SolicitudesModel.php";
    
     class CruContoller{
 
@@ -15,6 +16,7 @@
            
             $this->homeView = new HomeView();
             $this->solicitudRetiroView = new SolicitudRetiroView();
+            $this->solicitudesModel = new solicitudesModel();
             $this->materialView = new MaterialView();
             $this->materialModel = new MaterialModel();  
             $this->registroPesajeView = new RegistroPesajeView();         
@@ -43,7 +45,12 @@
             $this->materialView->showMaterialForm();
         }
 
+        function listadoSolicitudes(){
+            $solicitudes = $this->solicitudesModel->getSolicitudes();
+            $this->solicitudRetiroView->showListadoSolicitudes($solicitudes);
 
+        }
+        
         function registroPesaje(){
             $this->registroPesajeView->showRegistroPesaje();
         }

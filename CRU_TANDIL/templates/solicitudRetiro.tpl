@@ -56,8 +56,8 @@
                             <select name="franja_horaria" class="form-select col-md-1 col-md-offset-2 text-center"
                                 aria-label="Default select example">
                                 <option selected>Elija una opción</option>
-                                <option value="1">9-12 hs</option>
-                                <option value="2">13-17 hs</option>
+                                <option value="9-12 hs">9-12 hs</option>
+                                <option value="13-17 hs">13-17 hs</option>
                             </select>
                         </div>
 
@@ -66,10 +66,10 @@
                             <select name="volumen_materiales" class="form-select col-md-1 col-md-offset-2 text-center"
                                 aria-label="Default select example">
                                 <option selected>Elija una opción</option>
-                                <option value="1"> A - Entra en una caja</option>
-                                <option value="2"> B - Entra en el baúl de un auto</option>
-                                <option value="3"> C - Entra en la caja de una camioneta</option>
-                                <option value="3"> D - Es necesario un camión</option>
+                                <option value="Entra en una caja"> A - Entra en una caja</option>
+                                <option value="Entra en el baúl de un auto"> B - Entra en el baúl de un auto</option>
+                                <option value="Entra en la caja de una camioneta"> C - Entra en la caja de una camioneta</option>
+                                <option value="Es necesario un camión"> D - Es necesario un camión</option>
                             </select>
                         </div>
                     </form>
