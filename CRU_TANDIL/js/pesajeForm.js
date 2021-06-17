@@ -25,3 +25,13 @@ function respuesta(response) {
         alert("Ha surgido un error guardando los datos del pesaje, por favor intente nuevamente");
     }
 }
+
+function ocultarId(rol) {
+    let id = document.querySelector("#idUsuario");
+    if (rol.value == 2) {
+        id.style.display = "none";
+    }
+    else {
+        id.style.display = "flex";
+    }
+}
