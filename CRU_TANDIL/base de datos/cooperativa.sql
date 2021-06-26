@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2021 a las 03:25:48
+-- Tiempo de generación: 26-06-2021 a las 02:20:39
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -57,6 +57,17 @@ CREATE TABLE `pesaje_materiales` (
   `rol` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `pesaje_materiales`
+--
+
+INSERT INTO `pesaje_materiales` (`npesajemateriales`, `id`, `peso`, `material`, `rol`) VALUES
+(1, 2, 2, '2', '2'),
+(2, 0, 34, 'vidrio', 'Vecino'),
+(3, 366421346, 21, 'latas', 'Cartonero'),
+(4, 0, 90, 'Latas', 'Vecino buena onda'),
+(5, NULL, 90, 'Latas', 'Vecino buena onda');
+
 -- --------------------------------------------------------
 
 --
@@ -77,7 +88,20 @@ CREATE TABLE `solicitud_pedido` (
 --
 
 INSERT INTO `solicitud_pedido` (`nsolicitud`, `nombre_apellido`, `direccion`, `telefono`, `franja_horaria`, `volumen_materiales`) VALUES
-(1, 'Ernesto', 'Sarmiento 1387', '1549847383', '1', '2');
+(1, 'Ernesto', 'Sarmiento 1387', '1549847383', '9-12 hs', 'Entra en una caja'),
+(2, 'Monica', 'Maipu 1350', '139834738', '13-17 hs', 'Entra en el baúl de un auto');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `nusuario` bigint(20) UNSIGNED NOT NULL,
+  `usuario` varchar(120) NOT NULL,
+  `contraseña` varchar(120) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tablas volcadas
@@ -105,6 +129,13 @@ ALTER TABLE `solicitud_pedido`
   ADD UNIQUE KEY `nsolicitud` (`nsolicitud`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`nusuario`),
+  ADD UNIQUE KEY `nusuario` (`nusuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -118,13 +149,19 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `pesaje_materiales`
 --
 ALTER TABLE `pesaje_materiales`
-  MODIFY `npesajemateriales` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `npesajemateriales` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud_pedido`
 --
 ALTER TABLE `solicitud_pedido`
-  MODIFY `nsolicitud` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `nsolicitud` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `nusuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
