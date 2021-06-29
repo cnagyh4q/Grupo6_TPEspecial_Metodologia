@@ -7,6 +7,7 @@
     require_once "./Model/MaterialModel.php";
     require_once "./Model/SolicitudesModel.php";
     require_once "./Model/UsuariosModel.php";
+    require_once "./View/usuarioView.php";
    
     class CruContoller{
 
@@ -22,7 +23,7 @@
             $this->materialView = new MaterialView();
             $this->materialModel = new MaterialModel();  
             $this->registroPesajeView = new RegistroPesajeView();         
-            $this->usuariosView = null; //ACA TIENE QUE IR LA VISTA DE USUARIOS
+            $this->usuarioView = new UsuarioView();
         }
 
     
@@ -58,7 +59,7 @@
         }
 
         public function iniciarSesion() {
-            $this->usuariosView->iniciarSesion();
+            $this->usuarioView->showUsuario();
         }
 
         //Controla que el usuario exista y que la contraseña sea correcta

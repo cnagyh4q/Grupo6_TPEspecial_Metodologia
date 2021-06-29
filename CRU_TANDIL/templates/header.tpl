@@ -30,7 +30,7 @@
                     style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Solicitar Retiro</a></li>
                 <li class="nav-item"><a class="btn btn btn-lg" href="pesajeMaterial"
                     style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Registro Material</a></li>
-                <li class="nav-item"><a class="btn btn btn-lg" href="homeAdmin"
+                <li class="nav-item"><a class="btn btn btn-lg" href="iniciarSesion" class="trigger-btn"
                     style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Ingresar</a></li>
             </ul>
             

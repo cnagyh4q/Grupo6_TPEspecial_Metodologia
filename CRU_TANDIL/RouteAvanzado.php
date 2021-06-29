@@ -21,7 +21,7 @@
     $r->addRoute("pesajeMaterial", "GET", "CruContoller", "registroPesaje");
 
     $r->addRoute("iniciarSesion", "GET", "CruContoller", "iniciarSesion");
-    $r->addRoute("verify", "POST", "CruContoller", "verifyUser");
+    $r->addRoute("verify", "GET", "CruContoller", "verifyUser");
 
 
     $r->setDefaultRoute("CruContoller", "home");
