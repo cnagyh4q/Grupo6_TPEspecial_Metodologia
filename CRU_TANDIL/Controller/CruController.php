@@ -34,6 +34,7 @@
         }
 
         function homeAdmin(){
+            $this->checkLogIn();
             $materiales = $this->materialModel->getMateriales();
             $this->homeView->showHomeAdmin($materiales);
         }
@@ -45,10 +46,12 @@
         }
 
         function nuevoMaterial(){
+            $this->checkLogIn();
             $this->materialView->showMaterialForm();
         }
 
         function listadoSolicitudes(){
+            $this->checkLogIn();
             $solicitudes = $this->solicitudesModel->getSolicitudes();
             $this->solicitudRetiroView->showListadoSolicitudes($solicitudes);
 
@@ -80,10 +83,20 @@
                     
                    header('Location: ' . URL_homeAdmin);
                 } else {
-                    $this->usuariosView->iniciarSesion("La contraseña es incorrecta");
+                    $this->usuariosView->showUsuario("La contraseña es incorrecta");
                 }
             } else {
-                $this->usuariosView->iniciarSesion("El usuario no existe");
+                $this->usuariosView->showUsuario("El usuario no existe");
+            }
+        }
+
+        private function checkLogIn(){
+            session_start();
+            
+            if(!isset($_SESSION['ID_USER']) || ($_SESSION['admin'] != 1) ){
+                header("Location: " . URL_login);
+                //var_dump($_SESSION);
+                die();
             }
         }
 

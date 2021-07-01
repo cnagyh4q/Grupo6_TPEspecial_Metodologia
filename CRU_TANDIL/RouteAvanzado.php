@@ -7,6 +7,7 @@
     // CONSTANTES PARA RUTEO
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
     define("URL_homeAdmin", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/homeAdmin');
+    define("URL_login", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/iniciarSesion');
 
     $r = new Router();
 
@@ -21,7 +22,8 @@
     $r->addRoute("pesajeMaterial", "GET", "CruContoller", "registroPesaje");
 
     $r->addRoute("iniciarSesion", "GET", "CruContoller", "iniciarSesion");
-    $r->addRoute("verify", "GET", "CruContoller", "verifyUser");
+    $r->addRoute("verify", "POST", "CruContoller", "verifyUser");
+    $r->addRoute("cerrarSesion", "POST", "CruContoller", "logout");
 
 
     $r->setDefaultRoute("CruContoller", "home");
