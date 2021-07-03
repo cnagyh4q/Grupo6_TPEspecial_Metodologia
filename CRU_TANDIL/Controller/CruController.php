@@ -109,7 +109,7 @@
             session_destroy();  
             
             header('Location: ' . URL_login);
-            $this->view->showLogin("se cerro la sesion");
+            $this->view->showUsuario("se cerro la sesion");
         }
 
     }
