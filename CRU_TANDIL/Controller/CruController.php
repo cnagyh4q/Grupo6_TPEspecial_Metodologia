@@ -70,7 +70,7 @@
 
             $username = $_POST['user']; //'secretaria01';
             $password = $_POST['pass']; //'password';
-    
+
             $user = $this->usuariosModel->getPassword($username);
             
             if (!empty($user)) {
@@ -83,10 +83,10 @@
                     
                    header('Location: ' . URL_homeAdmin);
                 } else {
-                    $this->usuariosView->showUsuario("La contraseña es incorrecta");
+                    $this->usuarioView->showUsuario("La contraseña es incorrecta");
                 }
             } else {
-                $this->usuariosView->showUsuario("El usuario no existe");
+                $this->usuarioView->showUsuario("El usuario no existe");
             }
         }
 

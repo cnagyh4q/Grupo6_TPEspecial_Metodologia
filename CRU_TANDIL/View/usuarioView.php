@@ -13,7 +13,8 @@ class UsuarioView{
        $this->smarty->assign('url',BASE_URL);
    }
 
-   function showUsuario(){
+   function showUsuario($error = null){
+      $this->smarty->assign('error', $error);
       $this->smarty->display('templates/login.tpl');
 
    }
