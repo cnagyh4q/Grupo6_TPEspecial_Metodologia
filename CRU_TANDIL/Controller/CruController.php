@@ -81,7 +81,8 @@
                     $_SESSION['ID_USER'] = $user->nusuario;
                     $_SESSION['USERNAME'] = $user->usuario;
                     
-                   header('Location: ' . URL_homeAdmin);
+                   header("Location: " . URL_homeAdmin);
+                  die();
                 } else {
                     $this->usuariosView->showUsuario("La contraseña es incorrecta");
                 }
@@ -93,9 +94,8 @@
         private function checkLogIn(){
             session_start();
             
-            if(!isset($_SESSION['ID_USER']) || ($_SESSION['admin'] != 1) ){
+            if(!isset($_SESSION['ID_USER']) ){
                 header("Location: " . URL_login);
-                //var_dump($_SESSION);
                 die();
             }
         }
@@ -104,12 +104,12 @@
             session_start();
             // Unset all of the session variables.
             unset($_SESSION['USERNAME']);
+            unset($_SESSION['ID_USER']);
             // Finally, destroy the session.    
             session_destroy();  
             
             header('Location: ' . URL_login);
             $this->view->showLogin("se cerro la sesion");
-
         }
 
     }
