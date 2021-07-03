@@ -23,7 +23,7 @@
 
     $r->addRoute("iniciarSesion", "GET", "CruContoller", "iniciarSesion");
     $r->addRoute("verify", "POST", "CruContoller", "verifyUser");
-    $r->addRoute("cerrarSesion", "POST", "CruContoller", "logout");
+    $r->addRoute("cerrarSesion", "GET", "CruContoller", "logout");
 
 
     $r->setDefaultRoute("CruContoller", "home");
