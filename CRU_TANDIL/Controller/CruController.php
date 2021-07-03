@@ -8,6 +8,8 @@
     require_once "./Model/SolicitudesModel.php";
     require_once "./Model/UsuariosModel.php";
     require_once "./View/usuarioView.php";
+    require_once "./Model/PesajeMaterialesModel.php";
+    require_once "./View/pesajeMaterialesView.php";
    
     class CruContoller{
 
@@ -24,6 +26,8 @@
             $this->materialModel = new MaterialModel();  
             $this->registroPesajeView = new RegistroPesajeView();         
             $this->usuarioView = new UsuarioView();
+            $this->pesajeMaterialesModel = new PesajeMaterialesModel();  
+            $this->pesajeMaterialesView = new PesajeMaterialesView ();
         }
 
     
@@ -57,6 +61,12 @@
 
         }
         
+        function listMaterialesCartoneros(){
+            $this->checkLogIn();
+            $matCartoneros =  $this->pesajeMaterialesModel->getmatCartoneros();
+            $this->pesajeMaterialesView->showListadopesajesCartoneros($matCartoneros);
+        }
+
         function registroPesaje(){
             $this->registroPesajeView->showRegistroPesaje();
         }

@@ -21,6 +21,8 @@
     $r->addRoute("listadoSolicitudes", "GET", "CruContoller", "listadoSolicitudes");
     $r->addRoute("pesajeMaterial", "GET", "CruContoller", "registroPesaje");
 
+    $r->addRoute("ListadoMaterialesCartonero", "GET", "CruContoller", "listMaterialesCartoneros");
+
     $r->addRoute("iniciarSesion", "GET", "CruContoller", "iniciarSesion");
     $r->addRoute("verify", "POST", "CruContoller", "verifyUser");
     $r->addRoute("cerrarSesion", "GET", "CruContoller", "logout");

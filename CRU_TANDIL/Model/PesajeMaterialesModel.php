@@ -18,4 +18,13 @@ class PesajeMaterialesModel{
         return $this->db->lastInsertId();
     }
 
+
+    function getmatCartoneros(){
+        $sentencia = $this->db->prepare("SELECT * FROM pesaje_materiales WHERE rol='Cartonero' ORDER BY rol ASC " );
+        $sentencia->execute();
+        $materialesCartoneros = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+        return $materialesCartoneros;
+    }
+
 }
