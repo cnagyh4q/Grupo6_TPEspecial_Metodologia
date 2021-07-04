@@ -8,6 +8,8 @@
     require_once "./Model/SolicitudesModel.php";
     require_once "./Model/UsuariosModel.php";
     require_once "./View/usuarioView.php";
+    require_once "./Model/CartonerosModel.php";
+    require_once "./View/cartoneroView.php";
    
     class CruContoller{
 
@@ -20,10 +22,12 @@
             $this->solicitudRetiroView = new SolicitudRetiroView();
             $this->solicitudesModel = new solicitudesModel();
             $this->usuariosModel = new usuariosModel();
+            $this->cartonerosModel = new cartonerosModel();
             $this->materialView = new MaterialView();
             $this->materialModel = new MaterialModel();  
             $this->registroPesajeView = new RegistroPesajeView();         
             $this->usuarioView = new UsuarioView();
+            $this->cartoneroView = new CartoneroView();
         }
 
     
@@ -59,6 +63,11 @@
         
         function registroPesaje(){
             $this->registroPesajeView->showRegistroPesaje();
+        }
+
+        function nuevoCartonero(){
+            $this->checkLogIn();
+            $this->cartoneroView->showForm();
         }
 
         public function iniciarSesion() {
