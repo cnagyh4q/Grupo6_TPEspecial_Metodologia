@@ -34,14 +34,10 @@ CREATE TABLE `cartoneros` (
   `vehiculo` varchar(50) NOT NULL,
   `dni` int(20) NOT NULL,
   `direccion` varchar(150) DEFAULT NULL,
-  `nacimiento` date DEFAULT NULL
+  `nacimiento` date DEFAULT NULL,
+  `telefono` varchar(70) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Truncar tablas antes de insertar `cartoneros`
---
-
-TRUNCATE TABLE `cartoneros`;
 -- --------------------------------------------------------
 
 --
@@ -55,17 +51,13 @@ CREATE TABLE `material` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Truncar tablas antes de insertar `material`
---
-
-TRUNCATE TABLE `material`;
---
 -- Volcado de datos para la tabla `material`
 --
 
-INSERT INTO `material` (`nmaterial`, `tipo_material`, `tratamiento`) VALUES(2, 'Botellas de vidrio', 'Se deben entregar sanas y sin residuos de líquido en su interior');
-INSERT INTO `material` (`nmaterial`, `tipo_material`, `tratamiento`) VALUES(3, 'Latas de aluminio', 'Se deben entregar secas y aplastadas');
-INSERT INTO `material` (`nmaterial`, `tipo_material`, `tratamiento`) VALUES(4, 'Cajas de cartón', 'Se entregarán desarmadas y limpias');
+INSERT INTO `material` (`nmaterial`, `tipo_material`, `tratamiento`) VALUES
+(2, 'Botellas de vidrio', 'Se deben entregar sanas y sin residuos de líquido en su interior'),
+(3, 'Latas de aluminio', 'Se deben entregar secas y aplastadas'),
+(4, 'Cajas de cartón', 'Se entregarán desarmadas y limpias');
 
 -- --------------------------------------------------------
 
@@ -80,21 +72,6 @@ CREATE TABLE `pesaje_materiales` (
   `material` varchar(200) NOT NULL,
   `rol` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Truncar tablas antes de insertar `pesaje_materiales`
---
-
-TRUNCATE TABLE `pesaje_materiales`;
---
--- Volcado de datos para la tabla `pesaje_materiales`
---
-
-INSERT INTO `pesaje_materiales` (`npesajemateriales`, `id`, `peso`, `material`, `rol`) VALUES(1, 2, 2, '2', '2');
-INSERT INTO `pesaje_materiales` (`npesajemateriales`, `id`, `peso`, `material`, `rol`) VALUES(2, 0, 34, 'vidrio', 'Vecino');
-INSERT INTO `pesaje_materiales` (`npesajemateriales`, `id`, `peso`, `material`, `rol`) VALUES(3, 366421346, 21, 'latas', 'Cartonero');
-INSERT INTO `pesaje_materiales` (`npesajemateriales`, `id`, `peso`, `material`, `rol`) VALUES(4, 0, 90, 'Latas', 'Vecino buena onda');
-INSERT INTO `pesaje_materiales` (`npesajemateriales`, `id`, `peso`, `material`, `rol`) VALUES(5, NULL, 90, 'Latas', 'Vecino buena onda');
 
 -- --------------------------------------------------------
 
@@ -112,16 +89,12 @@ CREATE TABLE `solicitud_pedido` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Truncar tablas antes de insertar `solicitud_pedido`
---
-
-TRUNCATE TABLE `solicitud_pedido`;
---
 -- Volcado de datos para la tabla `solicitud_pedido`
 --
 
-INSERT INTO `solicitud_pedido` (`nsolicitud`, `nombre_apellido`, `direccion`, `telefono`, `franja_horaria`, `volumen_materiales`) VALUES(1, 'Ernesto', 'Sarmiento 1387', '1549847383', '9-12 hs', 'Entra en una caja');
-INSERT INTO `solicitud_pedido` (`nsolicitud`, `nombre_apellido`, `direccion`, `telefono`, `franja_horaria`, `volumen_materiales`) VALUES(2, 'Monica', 'Maipu 1350', '139834738', '13-17 hs', 'Entra en el baúl de un auto');
+INSERT INTO `solicitud_pedido` (`nsolicitud`, `nombre_apellido`, `direccion`, `telefono`, `franja_horaria`, `volumen_materiales`) VALUES
+(1, 'Ernesto', 'Sarmiento 1387', '1549847383', '9-12 hs', 'Entra en una caja'),
+(2, 'Monica', 'Maipu 1350', '139834738', '13-17 hs', 'Entra en el baúl de un auto');
 
 -- --------------------------------------------------------
 
@@ -136,16 +109,12 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Truncar tablas antes de insertar `usuarios`
---
-
-TRUNCATE TABLE `usuarios`;
---
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`nusuario`, `usuario`, `contraseña`) VALUES(1, 'secretaria01', '$2y$10$.9JxeYTVrPK8KbAxjLLdx.qubd9BJMgpDMv6l4ouUqitTyFq5IZQi');
-INSERT INTO `usuarios` (`nusuario`, `usuario`, `contraseña`) VALUES(2, 'secretaria02', '$2y$10$.9JxeYTVrPK8KbAxjLLdx.qubd9BJMgpDMv6l4ouUqitTyFq5IZQi');
+INSERT INTO `usuarios` (`nusuario`, `usuario`, `contraseña`) VALUES
+(1, 'secretaria01', '$2y$10$.9JxeYTVrPK8KbAxjLLdx.qubd9BJMgpDMv6l4ouUqitTyFq5IZQi'),
+(2, 'secretaria02', '$2y$10$.9JxeYTVrPK8KbAxjLLdx.qubd9BJMgpDMv6l4ouUqitTyFq5IZQi');
 
 --
 -- Índices para tablas volcadas
@@ -224,4 +193,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
