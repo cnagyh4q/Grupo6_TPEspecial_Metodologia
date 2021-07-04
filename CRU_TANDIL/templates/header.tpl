@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="bootstrap-social.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -30,7 +30,7 @@
                     style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Solicitar Retiro</a></li>
                 <li class="nav-item"><a class="btn btn btn-lg" href="pesajeMaterial"
                     style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Registro Material</a></li>
-                <li class="nav-item"><a class="btn btn btn-lg" href="homeAdmin"
+                <li class="nav-item"><a class="btn btn btn-lg" href="iniciarSesion" class="trigger-btn"
                     style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Ingresar</a></li>
             </ul>
             

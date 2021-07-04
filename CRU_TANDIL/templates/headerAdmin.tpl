@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav navbar-right btnheader">
                 <li class="nav-item"><a class="btn btn btn-lg" href="listadoSolicitudes"
                     style="margin-right: 15px; font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Listado Solicitudes</a></li>
-                <a class="btn btn btn-lg" href="home"
+                <a class="btn btn btn-lg" href="cerrarSesion"
                     style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Cerrar Sesión</a>
             </ul>
         </div>
