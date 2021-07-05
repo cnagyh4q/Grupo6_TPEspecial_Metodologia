@@ -4,7 +4,7 @@ document.querySelector('#form-cartonero').addEventListener('submit', (e) => {
 
     let data = new FormData(e.target);
 
-    fetch('./api/cartonero', {
+    fetch('./api/agregarCartonero', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(data)),
     })

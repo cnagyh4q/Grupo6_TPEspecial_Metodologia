@@ -4,27 +4,27 @@
         <div class="container sform">
             <div class="row">
                 <div class="col-md-12" id="form"style="margin-top:5%; background-color: rgba(255, 255, 255, 0.897)">
-                    <div class="well well-sm">
+                    <div class="well well-sm" >
                         <form class="form-horizontal" id="form-cartonero" method="post">
                             <fieldset>
                                 <hr>
                                 <legend class="text-center header "><b>Nuevo Cartonero</b></legend>
                                 <hr>
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre - Apellido </span>
+                                    <span class="input-group-text" id="required-field">Nombre - Apellido </span>
                                     <input name="nombre" type="text" class="form-control"
-                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                                 </div>
 
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Vehiculo</span>
+                                    <span class="input-group-text" id="required-field">Vehiculo</span>
                                     <input name="vehiculo" type="text" class="form-control"
-                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                                 </div>
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">DNI</span>
+                                    <span class="input-group-text" id="required-field">DNI</span>
                                     <input name="dni" type="number" class="form-control"
-                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"required>
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Direccion</span>
@@ -34,6 +34,11 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Nacimiento</span>
                                     <input name="nacimieto" type="date" class="form-control"
+                                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
+                                    <input name="telefono" type="number" class="form-control"
                                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                                 </div>
                             </fieldset>
@@ -59,6 +64,6 @@
             </div>
         </div>
     </div>
-
+</div>
     <script src="js/cartoneroForm.js">
     {include file="footer.tpl"}
