@@ -16,6 +16,12 @@ class CartoneroView{
    function showForm(){
       $this->smarty->display('templates/cartoneroForm.tpl');
    }
+
+
+   function showListadoCartoneros($cartoneros){
+      $this->smarty->assign('cartoneros',$cartoneros);
+      $this->smarty->display('templates/listadoCartonero.tpl');
+   }
    
 }
 

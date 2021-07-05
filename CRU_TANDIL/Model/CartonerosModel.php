@@ -19,4 +19,26 @@ class CartonerosModel{
         return $this->db->lastInsertId();
     }
 
+
+    /**
+     * obtiene el listado de los cartoneros
+     */
+    function getCartoneros(){
+        
+        $sentencia=$this->db->prepare('select * from cartoneros ');
+        $sentencia->execute(); 
+        return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    /**
+     * obtiene el listado de los cartoneros
+     */
+    function getCartoneroByDni($dni){
+        
+        $sentencia=$this->db->prepare('select * from cartoneros where dni=?');
+        $sentencia->execute([$dni]); 
+        return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }

@@ -100,6 +100,15 @@
             }
         }
 
+
+        function listadoCartoneros(){
+            $this->checkLogIn();
+            $cartoneros = $this->cartonerosModel->getCartoneros();
+            $this->cartoneroView->showListadoCartoneros($cartoneros);
+
+        }
+        
+
         private function checkLogIn(){
             session_start();
             

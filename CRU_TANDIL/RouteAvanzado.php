@@ -27,6 +27,8 @@
 
     $r->addRoute("nuevoCartonero", "GET", "CruContoller", "nuevoCartonero");
 
+    $r->addRoute("cartoneros", "GET", "CruContoller", "listadoCartoneros");
+
     $r->setDefaultRoute("CruContoller", "home");
 
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
