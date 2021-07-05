@@ -7,24 +7,19 @@ document.querySelector('#form-pesaje').addEventListener('submit', (e) => {
     fetch('./api/pesajeMaterial', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(data)),
-    })
-        .then((response) => respuesta(response))
-        .then((json) => json)
-        .catch((error) => console.log(error));
-
+    }).then(function (respuesta) {
+        let status = respuesta.ok //retorna true si la respuesta fue exitosa
+        respuesta.json().then(function (mijson) {
+            if (status) {
+                alert(mijson);
+                window.location.assign("home");
+            }
+            else {
+                alert(mijson);
+            }
+        });
+    }).catch((error) => console.log(error));
 });
-
-function respuesta(response) {
-    console.log(response)
-
-    if (response.ok) {
-        alert("Los datos del pesaje han sido cargados con exito");
-        window.location.assign("home");
-    }
-    else {
-        alert("Ha surgido un error guardando los datos del pesaje, por favor intente nuevamente");
-    }
-}
 
 function ocultarId(rol) {
     let id = document.querySelector("#idUsuario");
