@@ -19,7 +19,7 @@ function respuesta(response) {
 
     if (response.ok) {
         alert("El cartonero se guardo correctamente");
-        window.location.assign("homeAdmin");
+        window.location.assign("cartoneros");
     }
     else {
         alert("Ha surgido un error cargando los datos del nuevo cartonero, por favor intente nuevamente")
