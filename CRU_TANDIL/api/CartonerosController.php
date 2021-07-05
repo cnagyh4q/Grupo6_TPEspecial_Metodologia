@@ -29,25 +29,43 @@ class CartonerosController
     function agregarCartonero()
     {
         $body = $this->getData();
-        if (isset($body->nombre) && !empty($body->nombre) && isset($body->vehiculo) && !empty($body->vehiculo)
-         && isset($body->dni) && !empty($body->dni)) { 
+        if (
+            isset($body->nombre) && !empty($body->nombre) && isset($body->vehiculo) && !empty($body->vehiculo)
+            && isset($body->dni) && !empty($body->dni)
+        ) {
 
-            if (count($this->model->getCartoneroByDni($body->dni)) == 0 ) {
+            if (count($this->model->getCartoneroByDni($body->dni)) == 0) {
                 $cartonero = $this->model->agregarCartonero($body->nombre, $body->vehiculo, $body->dni, $body->direccion, $body->nacimiento, $body->telefono);
                 if ($cartonero > 0) {
                     return $this->view->response("ok", 200);
                 } else {
                     return $this->view->response("error guardando la cartonero", 404);
                 }
-
-            }
-            else {
+            } else {
                 return $this->view->response("error dni existente", 404);
             }
-           
         }
 
 
         return $this->view->response("error parametros obliagtorios", 500);
+    }
+
+
+
+
+    function modificarCartonero($params = null)
+    {
+        $body = $this->getData();
+        if (
+            isset($params[':ID']) && !empty($params[':ID']) && isset($body->nombre) && !empty($body->nombre) && isset($body->vehiculo) && !empty($body->vehiculo)
+            && isset($body->dni) && !empty($body->dni)
+        ) {
+
+            $this->model->modificarCartonero($params[':ID'], $body->nombre, $body->vehiculo, $body->dni, $body->direccion, $body->nacimiento, $body->telefono);
+
+            return $this->view->response("ok", 200);
+        } else {
+            return $this->view->response("error datos invalidos", 404);
+        }
     }
 }
