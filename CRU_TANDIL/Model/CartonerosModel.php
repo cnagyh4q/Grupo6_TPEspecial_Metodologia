@@ -32,7 +32,7 @@ class CartonerosModel{
 
 
     /**
-     * obtiene el listado de los cartoneros
+     * obtiene el cartonero por dni
      */
     function getCartoneroByDni($dni){
         
