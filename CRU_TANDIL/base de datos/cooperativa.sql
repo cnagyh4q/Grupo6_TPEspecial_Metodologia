@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 03-07-2021 a las 02:49:43
--- Versión del servidor: 10.1.39-MariaDB
--- Versión de PHP: 7.3.5
+-- Servidor: localhost
+-- Tiempo de generación: 05-07-2021 a las 05:43:08
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `cooperativa`
+-- Base de datos: `Cooperativa`
 --
 
 -- --------------------------------------------------------
@@ -35,7 +34,8 @@ CREATE TABLE `cartoneros` (
   `dni` int(20) NOT NULL,
   `direccion` varchar(150) DEFAULT NULL,
   `nacimiento` date DEFAULT NULL,
-  `telefono` varchar(70) DEFAULT NULL
+  `telefono` varchar(70) DEFAULT NULL,
+  `estado` varchar(2) NOT NULL DEFAULT 'A'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -125,7 +125,8 @@ INSERT INTO `usuarios` (`nusuario`, `usuario`, `contraseña`) VALUES
 --
 ALTER TABLE `cartoneros`
   ADD PRIMARY KEY (`ncartonero`),
-  ADD UNIQUE KEY `ncartonero` (`ncartonero`);
+  ADD UNIQUE KEY `ncartonero` (`ncartonero`),
+  ADD UNIQUE KEY `dni` (`dni`);
 
 --
 -- Indices de la tabla `material`
@@ -163,7 +164,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `cartoneros`
 --
 ALTER TABLE `cartoneros`
-  MODIFY `ncartonero` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ncartonero` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `material`
@@ -175,7 +176,7 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `pesaje_materiales`
 --
 ALTER TABLE `pesaje_materiales`
-  MODIFY `npesajemateriales` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `npesajemateriales` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud_pedido`

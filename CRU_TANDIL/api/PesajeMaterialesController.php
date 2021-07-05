@@ -1,6 +1,7 @@
 <?php
 
 require_once "./Model/PesajeMaterialesModel.php";
+require_once "./Model/CartonerosModel.php";
 require_once "responseView.php";
 
 class PesajeMaterialesController
@@ -14,6 +15,7 @@ class PesajeMaterialesController
     {
         $this->view = new ResponseView();
         $this->model = new PesajeMaterialesModel();
+        $this->modelCartonero = new CartonerosModel();
         $this->data = file_get_contents("php://input");
     }
 
@@ -42,7 +44,12 @@ class PesajeMaterialesController
          {   
             $body->rol = $body->rol == 1 ? "Cartonero": "Vecino buena onda"; 
 
+            
             $body->id = empty($body->id) ? null : $body->id;
+
+            if ($body->id != null && count($this->modelCartonero->getCartoneroByDni($body->id)) == 0){
+                  return $this->view->response("No existe cartonero", 404);
+            } 
                         
             $registro = $this->model->agregarPesaje($body->id,$body->peso ,$body->material,$body->rol);
 
