@@ -10,6 +10,9 @@
     require_once "./View/usuarioView.php";
     require_once "./Model/PesajeMaterialesModel.php";
     require_once "./View/pesajeMaterialesView.php";
+    require_once "./Model/CartonerosModel.php";
+    require_once "./View/cartoneroView.php";
+
    
     class CruContoller{
 
@@ -22,12 +25,14 @@
             $this->solicitudRetiroView = new SolicitudRetiroView();
             $this->solicitudesModel = new solicitudesModel();
             $this->usuariosModel = new usuariosModel();
+            $this->cartonerosModel = new cartonerosModel();
             $this->materialView = new MaterialView();
             $this->materialModel = new MaterialModel();  
             $this->registroPesajeView = new RegistroPesajeView();         
             $this->usuarioView = new UsuarioView();
             $this->pesajeMaterialesModel = new PesajeMaterialesModel();  
             $this->pesajeMaterialesView = new PesajeMaterialesView ();
+            $this->cartoneroView = new CartoneroView();
         }
 
     
@@ -71,6 +76,11 @@
             $this->registroPesajeView->showRegistroPesaje();
         }
 
+        function nuevoCartonero(){
+            $this->checkLogIn();
+            $this->cartoneroView->showForm();
+        }
+
         public function iniciarSesion() {
             $this->usuarioView->showUsuario();
         }
@@ -100,6 +110,15 @@
                 $this->usuarioView->showUsuario("El usuario no existe");
             }
         }
+
+
+        function listadoCartoneros(){
+            $this->checkLogIn();
+            $cartoneros = $this->cartonerosModel->getCartoneros();
+            $this->cartoneroView->showListadoCartoneros($cartoneros);
+
+        }
+        
 
         private function checkLogIn(){
             session_start();

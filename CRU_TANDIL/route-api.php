@@ -6,6 +6,7 @@ require_once 'RouterClass.php';
 require_once './api/SolicitudRetiroController.php';
 require_once 'api/MaterialesController.php';
 require_once 'api/PesajeMaterialesController.php';
+require_once 'api/CartonerosController.php';
 
 // CONSTANTES PARA RUTEO
 //define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
@@ -31,6 +32,13 @@ $r->addRoute("material/:ID", "PUT", "MaterialesController", "editarMaterial");
 
 //Registro el pesaje del material
 $r->addRoute("pesajeMaterial", "POST", "PesajeMaterialesController", "registrarMaterialPesaje");
+
+//Agrega un cartonero a la base de datos
+$r->addRoute("agregarCartonero", "POST", "CartonerosController", "agregarCartonero");
+
+$r->addRoute("cartonero/:ID", "PUT", "CartonerosController", "modificarCartonero");
+
+$r->addRoute("cartonero/:ID", "DELETE", "CartonerosController", "eliminarCartonero");
 
 
 $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);

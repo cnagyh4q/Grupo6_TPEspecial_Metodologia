@@ -1,6 +1,7 @@
 <?php
 
 require_once "./Model/PesajeMaterialesModel.php";
+require_once "./Model/CartonerosModel.php";
 require_once "responseView.php";
 
 class PesajeMaterialesController
@@ -14,6 +15,7 @@ class PesajeMaterialesController
     {
         $this->view = new ResponseView();
         $this->model = new PesajeMaterialesModel();
+        $this->modelCartonero = new CartonerosModel();
         $this->data = file_get_contents("php://input");
     }
 
@@ -30,22 +32,30 @@ class PesajeMaterialesController
      * material
      * rol
      */
-    
+
     function registrarMaterialPesaje()
     {
         $body = $this->getData();
-        
+
         if (
             isset($body->id) && isset($body->peso) && !empty($body->peso)
             && isset($body->material) && !empty($body->material) && isset($body->rol) && !empty($body->rol)
-            )
-         {   
-            $body->rol = $body->rol == 1 ? "Cartonero": "Vecino buena onda"; 
+        ) {
+            $body->rol = $body->rol == 1 ? "Cartonero" : "Vecino buena onda";
+
 
             $body->id = empty($body->id) ? null : $body->id;
-                        
-            $registro = $this->model->agregarPesaje($body->id,$body->peso ,$body->material,$body->rol);
 
+            if ($body->id != null) {
+                $cartonero = $this->modelCartonero->getCartoneroByDni($body->id);
+                if ($cartonero > 0) {
+                    $registro = $this->model->agregarPesaje($cartonero->nrcartonero, $body->peso, $body->material, $body->rol);
+                } else {
+                    return $this->view->response("No existe cartonero", 404);
+                }
+            } else {
+                $registro = $this->model->agregarPesaje($body->id, $body->peso, $body->material, $body->rol);
+            }
             if ($registro > 0) {
                 return $this->view->response("ok", 200);
             } else {
@@ -56,5 +66,4 @@ class PesajeMaterialesController
 
         return $this->view->response("error parametros obliagtorios", 500);
     }
-
 }
