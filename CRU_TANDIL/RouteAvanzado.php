@@ -27,6 +27,9 @@
     $r->addRoute("verify", "POST", "CruContoller", "verifyUser");
     $r->addRoute("cerrarSesion", "GET", "CruContoller", "logout");
 
+    $r->addRoute("nuevoCartonero", "GET", "CruContoller", "nuevoCartonero");
+
+    $r->addRoute("cartoneros", "GET", "CruContoller", "listadoCartoneros");
 
     $r->setDefaultRoute("CruContoller", "home");
 

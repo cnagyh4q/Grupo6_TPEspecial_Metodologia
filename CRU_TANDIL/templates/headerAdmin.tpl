@@ -21,17 +21,17 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <img src="image/iconoReciclaje.png" width="80" height="70">
-                <a class="navbar-brand titulo" style="color: black; font-size:40;" href="home">
+                <a class="navbar-brand titulo" style="color: black; font-size:40;" href="homeAdmin">
                     CRU TANDIL
                 </a>
             </div>
             <ul class="nav navbar-nav navbar-right btnheader">
-                <li class="nav-item"><a class="btn btn btn-lg" href="ListadoMaterialesCartonero"
-                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Materiales cartoneros</a></li>
+                <li class="nav-item"><a class="btn btn btn-lg" href="cartoneros"
+                    style="margin-right: 15px; font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Listado Cartoneros</a></li>
                 <li class="nav-item"><a class="btn btn btn-lg" href="listadoSolicitudes"
-                    style="margin-right: 15px; font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Listado Solicitudes</a></li>
-                <a class="btn btn btn-lg" href="cerrarSesion"
-                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Cerrar Sesión</a>
+                    style="margin-right: 15px; font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Solicitudes</a></li>
+                <li class="nav-item"><a class="btn btn btn-lg" href="cerrarSesion"
+                    style=" font-weight: bold;color:black ;background-color: rgba(173, 250, 150, 0.925);">Cerrar Sesión</a></li>
             </ul>
         </div>
     </nav>
