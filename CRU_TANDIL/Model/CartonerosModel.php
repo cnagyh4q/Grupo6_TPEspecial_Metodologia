@@ -41,4 +41,26 @@ class CartonerosModel{
         return $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+     /**
+     * obtiene el cartonero por ncartonero
+     */
+    function getCartoneroByNcartonero($ncartonero){
+        
+        $sentencia=$this->db->prepare('select * from cartoneros where ncartonero=?');
+        $sentencia->execute([$ncartonero]); 
+        return $sentencia->fetch(PDO::FETCH_ASSOC);
+    }
+
+
+    function modificarCartonero($ncartonero , $nombre, $vehiculo, $dni, $direccion, $nacimiento, $telefono){
+        
+        $sentencia=$this->db->prepare('UPDATE cartoneros set nombre=?, vehiculo=?, dni=?, direccion=?, nacimiento=?, telefono=? WHERE ncartonero = ?');
+        $sentencia->execute([$nombre, $vehiculo, $dni, $direccion, $nacimiento, $telefono , $ncartonero]);
+        
+
+    }
+
+
+
 }

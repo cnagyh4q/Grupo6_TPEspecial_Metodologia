@@ -25,3 +25,4 @@ function respuesta(response) {
         alert("Ha surgido un error cargando los datos del nuevo cartonero, por favor intente nuevamente")
     }
 }
+

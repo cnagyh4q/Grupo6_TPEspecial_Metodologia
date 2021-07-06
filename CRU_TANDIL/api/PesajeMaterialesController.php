@@ -32,27 +32,30 @@ class PesajeMaterialesController
      * material
      * rol
      */
-    
+
     function registrarMaterialPesaje()
     {
         $body = $this->getData();
-        
+
         if (
             isset($body->id) && isset($body->peso) && !empty($body->peso)
             && isset($body->material) && !empty($body->material) && isset($body->rol) && !empty($body->rol)
-            )
-         {   
-            $body->rol = $body->rol == 1 ? "Cartonero": "Vecino buena onda"; 
+        ) {
+            $body->rol = $body->rol == 1 ? "Cartonero" : "Vecino buena onda";
 
-            
+
             $body->id = empty($body->id) ? null : $body->id;
 
-            if ($body->id != null && count($this->modelCartonero->getCartoneroByDni($body->id)) == 0){
-                  return $this->view->response("No existe cartonero", 404);
-            } 
-                        
-            $registro = $this->model->agregarPesaje($body->id,$body->peso ,$body->material,$body->rol);
-
+            if ($body->id != null) {
+                $cartonero = $this->modelCartonero->getCartoneroByDni($body->id);
+                if ($cartonero > 0) {
+                    $registro = $this->model->agregarPesaje($cartonero->nrcartonero, $body->peso, $body->material, $body->rol);
+                } else {
+                    return $this->view->response("No existe cartonero", 404);
+                }
+            } else {
+                $registro = $this->model->agregarPesaje($body->id, $body->peso, $body->material, $body->rol);
+            }
             if ($registro > 0) {
                 return $this->view->response("Se guardo el pesaje correctamente", 200);
             } else {
@@ -63,5 +66,4 @@ class PesajeMaterialesController
 
         return $this->view->response("error parametros obliagtorios", 500);
     }
-
 }

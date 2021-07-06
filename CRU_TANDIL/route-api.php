@@ -36,5 +36,7 @@ $r->addRoute("pesajeMaterial", "POST", "PesajeMaterialesController", "registrarM
 //Agrega un cartonero a la base de datos
 $r->addRoute("agregarCartonero", "POST", "CartonerosController", "agregarCartonero");
 
+$r->addRoute("cartonero/:ID", "PUT", "CartonerosController", "modificarCartonero");
+
 
 $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);
