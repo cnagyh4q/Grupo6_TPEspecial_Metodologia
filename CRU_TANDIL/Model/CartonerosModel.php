@@ -62,5 +62,11 @@ class CartonerosModel{
     }
 
 
+     function eliminarCartonero($idcartonero){
+        $sentencia=$this->db->prepare("DELETE FROM cartoneros where ncartonero = ?");
+        $sentencia->execute([$idcartonero]);
+    }
+
+
 
 }

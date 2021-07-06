@@ -39,4 +39,7 @@ $r->addRoute("agregarCartonero", "POST", "CartonerosController", "agregarCartone
 $r->addRoute("cartonero/:ID", "PUT", "CartonerosController", "modificarCartonero");
 
 
+$r->addRoute("cartonero/:ID", "DELETE", "CartonerosController", "eliminarCartonero");
+
+
 $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);

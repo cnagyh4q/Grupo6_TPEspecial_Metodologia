@@ -12,6 +12,7 @@
     require_once "./View/pesajeMaterialesView.php";
     require_once "./Model/CartonerosModel.php";
     require_once "./View/cartoneroView.php";
+
    
     class CruContoller{
 

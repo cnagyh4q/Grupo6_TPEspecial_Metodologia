@@ -68,4 +68,16 @@ class CartonerosController
             return $this->view->response("error datos invalidos", 404);
         }
     }
+<<<<<<< HEAD
+=======
+
+    function eliminarCartonero($params = null)
+    {
+        if (isset($params[':ID']) && !empty($params[':ID'])) {           
+                $this->model->eliminarCartonero($params[':ID']);
+                return $this->view->response($params[':ID'], 200);           
+        }
+        return $this->view->response("error datos obligatorios", 404);
+    }
+>>>>>>> GTM-42
 }

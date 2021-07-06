@@ -59,3 +59,28 @@ function respuestaEdit(response) {
         alert("Ha surgido un error al actualizar el cartonero, por favor intente nuevamente");
     }
 }
+
+function eliminarCartonero(id) {
+    console.log("llegue");
+    let url = './api/cartonero/' + id;
+
+    fetch(url, {
+        method: 'DELETE',
+    })
+        .then((response) => respuesta(response))
+        .then((json) => json)
+        .catch((error) => console.log(error));
+
+}
+
+function respuesta(response) {
+    console.log(response)
+
+    if (response.ok) {
+        alert("El cartonero se elimino correctamente");
+        window.location.assign("cartoneros");
+    }
+    else {
+        alert("Ha surgido un error al intentar eliminar el cartonero, por favor intente nuevamente");
+    }
+}
