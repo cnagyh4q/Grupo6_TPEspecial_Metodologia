@@ -50,9 +50,6 @@ class CartonerosController
         return $this->view->response("error parametros obliagtorios", 500);
     }
 
-
-
-
     function modificarCartonero($params = null)
     {
         $body = $this->getData();
@@ -68,8 +65,6 @@ class CartonerosController
             return $this->view->response("error datos invalidos", 404);
         }
     }
-<<<<<<< HEAD
-=======
 
     function eliminarCartonero($params = null)
     {
@@ -79,5 +74,4 @@ class CartonerosController
         }
         return $this->view->response("error datos obligatorios", 404);
     }
->>>>>>> GTM-42
 }

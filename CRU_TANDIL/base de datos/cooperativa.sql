@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `Cooperativa`
+-- Base de datos: `cooperativa`
 --
 
 -- --------------------------------------------------------
@@ -34,9 +34,17 @@ CREATE TABLE `cartoneros` (
   `dni` int(20) NOT NULL,
   `direccion` varchar(150) DEFAULT NULL,
   `nacimiento` date DEFAULT NULL,
-  `telefono` varchar(70) DEFAULT NULL,
-  `estado` varchar(2) NOT NULL DEFAULT 'A'
+  `telefono` varchar(70) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cartoneros`
+--
+
+INSERT INTO `cartoneros` (`ncartonero`, `nombre`, `vehiculo`, `dni`, `direccion`, `nacimiento`, `telefono`) VALUES
+(1, 'Agustin', 'Bicicleta', 1860206, 'Paraguay 85', '1985-09-08', ''),
+(2, 'Pablo', 'Camioneta', 12731823, '4 de abril 839', '1984-01-07', '23424323'),
+(4, 'Patricio', 'camion', 232342342, 'Sargento Cabral 450', '1987-09-17', '');
 
 -- --------------------------------------------------------
 
@@ -72,6 +80,15 @@ CREATE TABLE `pesaje_materiales` (
   `material` varchar(200) NOT NULL,
   `rol` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `pesaje_materiales`
+--
+
+INSERT INTO `pesaje_materiales` (`npesajemateriales`, `id`, `peso`, `material`, `rol`) VALUES
+(1, 1860206, 34, '4 ', 'Cartonero'),
+(2, 12731823, 87, '3 ', 'Cartonero'),
+(3, 1860206, 65, '3 ', 'Cartonero');
 
 -- --------------------------------------------------------
 
@@ -125,8 +142,7 @@ INSERT INTO `usuarios` (`nusuario`, `usuario`, `contraseña`) VALUES
 --
 ALTER TABLE `cartoneros`
   ADD PRIMARY KEY (`ncartonero`),
-  ADD UNIQUE KEY `ncartonero` (`ncartonero`),
-  ADD UNIQUE KEY `dni` (`dni`);
+  ADD UNIQUE KEY `ncartonero` (`ncartonero`);
 
 --
 -- Indices de la tabla `material`
@@ -164,7 +180,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `cartoneros`
 --
 ALTER TABLE `cartoneros`
-  MODIFY `ncartonero` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ncartonero` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `material`
@@ -176,7 +192,7 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `pesaje_materiales`
 --
 ALTER TABLE `pesaje_materiales`
-  MODIFY `npesajemateriales` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `npesajemateriales` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud_pedido`

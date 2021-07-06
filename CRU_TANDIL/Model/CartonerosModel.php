@@ -38,7 +38,7 @@ class CartonerosModel{
         
         $sentencia=$this->db->prepare('select * from cartoneros where dni=?');
         $sentencia->execute([$dni]); 
-        return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+        return $sentencia->fetch(PDO::FETCH_ASSOC);
     }
 
 

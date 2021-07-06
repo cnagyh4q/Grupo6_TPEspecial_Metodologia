@@ -20,7 +20,9 @@ class PesajeMaterialesModel{
 
 
     function getmatCartoneros(){
-        $sentencia = $this->db->prepare("SELECT * FROM pesaje_materiales WHERE rol='Cartonero' ORDER BY rol ASC " );
+        $sentencia = $this->db->prepare("SELECT sum(pm.peso) as peso, m.tipo_material as material, c.nombre, c.dni 
+        FROM pesaje_materiales pm LEFT JOIN cartoneros c ON pm.id = c.dni 
+        LEFT JOIN material m ON m.nmaterial = pm.material GROUP BY m.nmaterial, c.ncartonero" );
         $sentencia->execute();
         $materialesCartoneros = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 

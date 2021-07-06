@@ -48,8 +48,8 @@ class PesajeMaterialesController
 
             if ($body->id != null) {
                 $cartonero = $this->modelCartonero->getCartoneroByDni($body->id);
-                if ($cartonero > 0) {
-                    $registro = $this->model->agregarPesaje($cartonero->nrcartonero, $body->peso, $body->material, $body->rol);
+                if ($cartonero['ncartonero'] > 0) {
+                    $registro = $this->model->agregarPesaje($cartonero['dni'] , $body->peso, $body->material, $body->rol);
                 } else {
                     return $this->view->response("No existe cartonero", 404);
                 }

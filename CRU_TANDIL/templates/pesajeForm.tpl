@@ -30,7 +30,12 @@
 
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Material</span>
-                                    <input id="material" name="material" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    <select  id="material" name="material" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                        <option> Seleccione  </option>
+                                            {foreach from=$materiales item=material}
+                                                <option value="{$material.nmaterial} ">{$material.tipo_material}</option>
+                                            {/foreach}
+                                    </select>
                                 </div>
                                 
                             </fieldset>

@@ -3,7 +3,6 @@
     require_once "./View/homeView.php";
     require_once "./View/solicitudRetiroView.php";
     require_once "./View/materialView.php";
-    require_once "./View/registroPesajeView.php";
     require_once "./Model/MaterialModel.php";
     require_once "./Model/SolicitudesModel.php";
     require_once "./Model/UsuariosModel.php";
@@ -27,8 +26,7 @@
             $this->usuariosModel = new usuariosModel();
             $this->cartonerosModel = new cartonerosModel();
             $this->materialView = new MaterialView();
-            $this->materialModel = new MaterialModel();  
-            $this->registroPesajeView = new RegistroPesajeView();         
+            $this->materialModel = new MaterialModel();          
             $this->usuarioView = new UsuarioView();
             $this->pesajeMaterialesModel = new PesajeMaterialesModel();  
             $this->pesajeMaterialesView = new PesajeMaterialesView ();
@@ -73,7 +71,8 @@
         }
 
         function registroPesaje(){
-            $this->registroPesajeView->showRegistroPesaje();
+            $materiales = $this->materialModel->getMateriales();
+            $this->pesajeMaterialesView->showRegistroPesaje($materiales);
         }
 
         function nuevoCartonero(){

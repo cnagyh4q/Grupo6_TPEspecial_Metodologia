@@ -10,19 +10,19 @@
             <thead>
                 
                 <tr>
-                    <th><h5><strong>DNI</strong></h5></th>
-                    <th><h5><strong>Peso</strong></h5></th>
                     <th><h5><strong>Material</strong></h5></th>
-                    <th><h5><strong>Rol</strong></h5></th>
+                    <th><h5><strong>Peso</strong></h5></th>
+                    <th><h5><strong>Cartonero</strong></h5></th>
+                    <th><h5><strong>DNI</strong></h5></th>
                 </tr>
             </thead>
             <tbody>
                 {foreach from=$matCartoneros item=matCartonero}
                     <tr>
-                        <td>{$matCartonero.id}</td>
-                        <td>{$matCartonero.peso}</td>
                         <td>{$matCartonero.material}</td>
-                        <td>{$matCartonero.rol}</td>     
+                        <td>{$matCartonero.peso} Kg</td>
+                        <td>{$matCartonero.nombre}</td>
+                        <td>{$matCartonero.dni}</td>     
                     </tr> 
                 {/foreach}            
             </tbody>
