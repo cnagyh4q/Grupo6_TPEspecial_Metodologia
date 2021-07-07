@@ -34,17 +34,18 @@ CREATE TABLE `cartoneros` (
   `dni` int(20) NOT NULL,
   `direccion` varchar(150) DEFAULT NULL,
   `nacimiento` date DEFAULT NULL,
-  `telefono` varchar(70) DEFAULT NULL
+  `telefono` varchar(70) DEFAULT NULL,
+  `habilitado` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `cartoneros`
 --
 
-INSERT INTO `cartoneros` (`ncartonero`, `nombre`, `vehiculo`, `dni`, `direccion`, `nacimiento`, `telefono`) VALUES
-(1, 'Agustin', 'Bicicleta', 1860206, 'Paraguay 85', '1985-09-08', ''),
-(2, 'Pablo', 'Camioneta', 12731823, '4 de abril 839', '1984-01-07', '23424323'),
-(4, 'Patricio', 'camion', 232342342, 'Sargento Cabral 450', '1987-09-17', '');
+INSERT INTO `cartoneros` (`ncartonero`, `nombre`, `vehiculo`, `dni`, `direccion`, `nacimiento`, `telefono`, `habilitado`) VALUES
+(1, 'Agustin', 'Bicicleta', 1860206, 'Paraguay 85', '1985-09-08', '', 1),
+(2, 'Pablo', 'Camioneta', 12731823, '4 de abril 839', '1984-01-07', '23424323', 1),
+(4, 'Patricio', 'camion', 232342342, 'Sargento Cabral 450', '1987-09-17', '', 1);
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,9 @@ CREATE TABLE `pesaje_materiales` (
 INSERT INTO `pesaje_materiales` (`npesajemateriales`, `id`, `peso`, `material`, `rol`) VALUES
 (1, 1860206, 34, '4 ', 'Cartonero'),
 (2, 12731823, 87, '3 ', 'Cartonero'),
-(3, 1860206, 65, '3 ', 'Cartonero');
+(3, 1860206, 65, '3 ', 'Cartonero'),
+(4, 1860206, 64, '4 ', 'Cartonero'),
+(5, 232342342, 45, '3 ', 'Cartonero');
 
 -- --------------------------------------------------------
 
@@ -192,7 +195,7 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `pesaje_materiales`
 --
 ALTER TABLE `pesaje_materiales`
-  MODIFY `npesajemateriales` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `npesajemateriales` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud_pedido`

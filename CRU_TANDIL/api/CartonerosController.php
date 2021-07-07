@@ -33,8 +33,8 @@ class CartonerosController
             isset($body->nombre) && !empty($body->nombre) && isset($body->vehiculo) && !empty($body->vehiculo)
             && isset($body->dni) && !empty($body->dni)
         ) {
-
-            if (count($this->model->getCartoneroByDni($body->dni)) == 0) {
+            
+            if (!$this->model->getCartoneroByDni($body->dni)) {
                 $cartonero = $this->model->agregarCartonero($body->nombre, $body->vehiculo, $body->dni, $body->direccion, $body->nacimiento, $body->telefono);
                 if ($cartonero > 0) {
                     return $this->view->response("ok", 200);
