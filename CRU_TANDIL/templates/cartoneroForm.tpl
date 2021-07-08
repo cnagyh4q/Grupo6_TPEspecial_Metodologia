@@ -1,6 +1,5 @@
 {include file="headerAdmin.tpl"}
 
-    <div>
         <div class="container sform">
             <div class="row">
                 <div class="col-md-12" id="form"style="margin-top:5%; background-color: rgba(255, 255, 255, 0.897)">
@@ -66,4 +65,5 @@
     </div>
 </div>
     <script src="js/cartoneroForm.js">
-    {include file="footer.tpl"}
+
+{include file="footer.tpl"}
